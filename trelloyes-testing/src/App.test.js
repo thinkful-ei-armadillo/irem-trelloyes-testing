@@ -7,8 +7,10 @@ describe('<App />', () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(<App />, div);
-
+  ReactDOM.render(<App 
+    lists={[
+      {id: "2a4c", header:"Test List", cardIds: "l,n, j"},
+      {id: "2a9b", header:"Test List", cardIds: "l,n, j"} ]} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
