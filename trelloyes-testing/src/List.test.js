@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './App';
+import List from './List';
 import renderer from 'react-test-renderer';
 
-describe('<App />', () => {
+describe('<List />', () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(<List />, div);
+  ReactDOM.render(<List 
+    cards={[
+    {title: "test card1 title", content: "test card1 content"}, 
+    {title: "test card2 title", content: "test card2 content"}]} />, div);
 
   ReactDOM.unmountComponentAtNode(div);
 });
