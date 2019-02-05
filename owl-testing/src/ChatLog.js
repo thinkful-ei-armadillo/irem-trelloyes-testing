@@ -1,11 +1,11 @@
 import React from 'react';
 import Participant from './Participant';
+import ChatEvents from './ChatEvents';
 
-
-function Participants(props){
+function ChatLog(props){
     return (
-        <section className="List">
-            <div className="List-participants">
+        <section className="ChatLog">
+            <div className="ChatLog-participants">
                 {props.participants
                 .sort(function(a, b){return b.inSession-a.inSession})
                 .map((item, index) => {
@@ -14,7 +14,6 @@ function Participants(props){
             </div>
         </section>
     );
-
 }
 
-export default Participants;
+export default ChatLog;

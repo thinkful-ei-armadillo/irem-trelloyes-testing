@@ -1,13 +1,12 @@
 import React from 'react';
 import Participant from './Participant';
 
-
-function Participants(props){
+function Stage(props){
     return (
-        <section className="List">
-            <div className="List-participants">
+        <section className="OnStage">
+            <div className="OnStage-participants">
                 {props.participants
-                .sort(function(a, b){return b.inSession-a.inSession})
+                .filter(item => item.onStage === true)
                 .map((item, index) => {
                     return <Participant key={index} name={item.name} avatar={item.avatar} />;
                     })}
@@ -17,4 +16,4 @@ function Participants(props){
 
 }
 
-export default Participants;
+export default Stage;
