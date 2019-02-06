@@ -1,19 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Participant from './Participant';
-import ChatEvents from './ChatEvents';
+import store from './store';
+import chatEvents from './ChatEvents';
 
-function ChatLog(props){
+class ChatLog extends Component{
+  static defaultProps =  { 
+      participants: store,
+      chatEvents: chatEvents
+};
+
+  render() {
+      console.log(this.props);
     return (
-        <section className="ChatLog">
-            <div className="ChatLog-participants">
-                {props.participants
-                .sort(function(a, b){return b.inSession-a.inSession})
-                .map((item, index) => {
-                    return <Participant key={index} name={item.name} avatar={item.avatar} />;
-                    })}
-            </div>
-        </section>
-    );
+        <div className="App-list">
+          {this.props.chatEvents.map(chatEvent=> (
+          <Participant 
+          name={this.props.participants.find(participant => participant.id === chatEvent.participantId).name}
+          avatar={this.props.participants.find(participant => participant.id === chatEvent.participantId).avatar}
+          />))}
+      </div>
+  );
 }
+}
+
 
 export default ChatLog;
