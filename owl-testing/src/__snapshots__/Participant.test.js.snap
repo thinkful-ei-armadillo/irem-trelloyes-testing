@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders the UI as expected 1`] = `
+<div
+  className="Participant"
+>
+  <img
+    alt="headshot"
+    src="https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg"
+  />
+  <h3>
+    Sally Salonga
+  </h3>
+  <p>
+    false
+  </p>
+  <p>
+    true
+  </p>
+</div>
+`;

@@ -6,7 +6,7 @@ function Participant(props){
             <img src={props.avatar} alt="headshot"/>
             <h3>{props.name}</h3>
             <p>{props.onStage}</p>
-            <p>{props.id}</p>
+            <p>{props.inSession}</p>
         </div>
     );
 }
