@@ -21,7 +21,7 @@ class ChatLog extends Component{
                 avatar={this.props.participants.find(participant => participant.id === chatEvent.participantId).avatar} />
               <ChatEvent 
               type={chatEvent.type} 
-              message={chatEvent.type} 
+              message={chatEvent.message} 
               timestamp= {new Date(chatEvent.timestamp).toString()} />
           </div>
           ))}
